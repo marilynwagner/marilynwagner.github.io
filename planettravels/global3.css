@@ -1,0 +1,140 @@
+/*
+File Name: global3.css
+Date: 01/26/14
+Programmer: Marilyn Wagner 
+*/
+
+/* don't change this declaration block */
+
+h1, h2, p {
+	margin: 0; padding: 0;
+}
+
+div#banner span {
+	display: block;
+}
+
+div#content {
+	padding: 30px;
+}
+
+div.planet p {
+	margin-left: 5em;}
+
+/* =================================== */
+
+/* Put your CSS here */
+
+html {
+	background-color: #000000;
+}
+
+body {
+	margin-bottom: 60px;
+}
+
+h1, h2, p {
+	margin-bottom: 10px;
+}
+
+h1 {
+    font-family: "Cedarville Cursive", cursive;
+    font-style: italic;
+    font-size: 64px;
+    padding-top: 0;
+    margin-top: 0;
+    margin-left: 160px;
+    margin-right: 160px;
+    padding-bottom: 0px;
+    margin-bottom:0;
+    border-bottom: 3px #00FF00 solid; 
+}
+
+h1 span {
+  font-size: 150px;
+  color: white;
+  line-height: 1em;
+  margin-right: -1.25em;
+  text-shadow: 6px 7px 10px rgba(255,51,255,.5);
+  letter-spacing: 5px;
+}
+
+#header2:first-letter {
+    text-transform: uppercase;
+    color: rgba(0,255,0,.75);        
+}
+
+#banner #header2 {
+	margin-top: -60px;
+	margin-left: 150px;
+	letter-spacing: 20px;
+}
+
+h2:first-letter {
+	font-size: 2em;
+}
+
+p {
+	color: #30CCFF;
+	font-family: arial, "Times New Roman", serif;
+	font-size: .80em;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#planets a:link {
+	color: #FF33FF; 
+	text-decoration: none;
+}
+	
+#planets a:hover {
+	color:#00FF00; letter-spacing: 25px;	
+}
+	
+#planets {
+	font-family: arial;
+	font-weight: bold;
+	text-align: center;
+	text-transform: uppercase;
+	color: #FF33FF;
+	line-height: 150%;
+	list-style-type: none;
+}
+
+div#content {
+	width: 800px;
+	border: 4px double #00FF00;
+	margin: 0 auto;	
+}
+
+.go_top {
+	font-family: arial;
+	font-weight: bold;
+	text-transform: uppercase;
+	word-spacing: 7px;
+	text-align: center;
+	color: #FF33FF;
+	font-size: .60em;
+}
+
+.go_top a:link {	
+	color: #FF33FF; 
+	text-decoration: none;
+}
+.go_top a:hover {
+	color: #FF33FF; 
+	word-spacing: 45px; 
+	text-decoration: underline;	
+}
+
+div.planet p {
+	color: #30CCFF;
+}
+	
+div.planet h2 {
+	
+	background-color:#00FF00;
+	color: #000000;
+	padding: 3px;
+}
+

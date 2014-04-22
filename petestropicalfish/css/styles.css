@@ -1,0 +1,252 @@
+/*
+File Name: styles.css
+Date: 3/4/14
+Programmer: Marilyn Wagner 
+*/
+
+body {
+	
+	color: black;
+	font-family: Verdana, Arial, sans-serif;	
+	background: #fefcea; /* Old browsers */
+	background: -moz-linear-gradient(left, #fefcea 0%, #f1da36 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#fefcea), color-stop(100%,#f1da36)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left, #fefcea 0%,#f1da36 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, #fefcea 0%,#f1da36 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left, #fefcea 0%,#f1da36 100%); /* IE10+ */
+	background: linear-gradient(to right, #fefcea 0%,#f1da36 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#f1da36',GradientType=1 ); /* IE6-9 */
+}
+
+header {
+	background-color: blue;
+}
+
+h1 {
+	text-align: center;
+}
+
+h1 img {
+	width: 1050px;
+	height: 120px;	
+}
+
+h2 {
+	text-transform: uppercase;
+	background-color: #9999FF;
+	color: #663300;
+	font-size: 1.2em;
+	border-bottom: 1px solid #000000;
+	padding: 5px 0 0 5px;
+	margin-right: 20px;
+	clear: left;
+}
+
+h3 {
+	text-align: center;
+	text-transform: uppercase;
+}
+
+#nav {
+	text-align: center;
+	float: left;
+	width: 100px;
+	padding-top: 10px;
+	padding-right: 46px;
+	font-weight: bold;	
+}
+
+#nav a {
+	text-decoration: none;
+	padding-bottom: 15px;
+	background-color: #B4B4FF;
+	-webkit-transition-property: background-color;
+	-moz-transition-property: background-color;
+	-o-transition-property: background-color;
+	transition-property: background-color;
+	-webkit-transition-duration: 1s;
+	-moz-transition-duration: 1s;
+	-o-transition-duration: 1s;
+	transition-duration: 2s;
+	display: inline-block;
+}
+
+#nav a:link {
+	color: red;
+	text-decoration: underline;
+}
+
+#nav a:visited {
+	color: purple;
+	text-decoration: underline;
+}
+
+#nav a:hover {
+	color: green;
+	text-decoration: none;
+	background-color: #F7E984;
+	display: inline-block;
+}
+
+#nav a:active {
+	color: blue;
+	text-decoration: underline;
+}
+
+#nav ul {
+	list-style-type: none;
+}
+
+#content {
+	padding-top: 10px;
+	padding-bottom: 30px;
+	padding-right: 20px;
+	padding-left: 20px;
+	color: #000000;
+	margin-left: 150px;
+	background-color: #8282FF;
+	height: 400px;
+}
+
+.sidebar1 {
+  	float: left;
+	width: 20%;
+  	padding: 0 20px 0 10px;
+}
+
+.main {
+	float: left;
+	width: 20%;
+  	padding: 0 20px;  
+}
+
+.sidebar2 {
+	float: right;
+  	width: 20%;	
+  	padding: 0 40px 0 20px;
+}
+
+.sidebar2 li {
+	list-style: none;
+}
+
+.sidebar2 a {
+	text-decoration: underline;
+	padding-bottom: 12px;
+}
+
+.sidebar2 a:link {
+	color: purple;
+	text-decoration: none;
+}
+
+.sidebar2 a:visited {
+	color: red;
+	text-decoration: none;
+}
+
+.sidebar2 a:hover {
+	color: blue;
+	text-decoration: underline;
+}
+
+.sidebar2 a:active {
+	color: green;
+	text-decoration: none;
+}
+
+table {
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 15px;
+}
+
+td, th {
+	padding: 10px;
+}
+
+tr:nth-of-type(odd) {
+	background-color: #9999FF;		
+}
+
+#footer {
+	background-color: #2E00B4;
+	color: #FFFFFF;
+	font-size: .75em;
+	font-style: italic;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-left: 0px;
+	margin-right: 0px;	
+	clear: both;
+}
+
+#footer a:link {
+	color: #ffffcc;
+}
+
+#footer a:visited {
+	color: #f2eab7;
+}
+
+#footer a:hover {
+	color: #330000;
+}
+
+#wrapper {
+	margin-top: 75px;
+	background-color: #B4B4FF;
+	min-width: 700px;
+	box-shadow: 10px 10px 5px #3333FF;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+}
+
+img {
+	border: 0;
+}
+
+label {
+	display: inline-block;
+	text-align: right;
+	padding-right: 10px;
+	width: 120px;
+	margin-bottom: 20px;
+}
+
+input, textarea {
+	width:300px;			
+}
+
+#submit {
+	width: 100px;
+}
+
+figure img {
+	border: 1px solid #666;
+	background-color: #FFF;
+	padding: 4px;
+	box-shadow: 2px 2px 4px rgba(0,0,0,.5);
+}
+
+figure {
+	display: inline-block;
+	vertical-align: top;
+	width: 210px;
+	margin: 0 10px 10px 10px;
+}
+
+figcaption {
+	font: 1.1em/normal Arial, Helvetica, sans-serif;
+	text-align: center;
+	font-weight: bold;
+	margin: 10px 0 0 0;
+}
+
+figcaption span {
+	font-weight: bold;
+	color: red;
+}
+

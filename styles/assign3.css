@@ -1,0 +1,56 @@
+/*
+File Name: assign.css
+Date: 01/28/14
+Programmer: Marilyn Wagner 
+*/
+
+body {
+	background-color: #6699ff;
+}
+
+#tabs {
+	overflow: hidden;
+	zoom: 1;
+}
+	
+#tabs li {
+	display: block;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	float: left;
+}
+
+#tabs li a {
+	display: block;
+	padding: 2px 5px;
+	border: 2px solid #ccc;
+	border-bottom: 0 none;
+	text-align: center;
+}
+
+.tab-section {
+	padding: 10px;
+	border: 2px solid #ccc;
+}
+
+#tabs li a.current {
+	background: #fff;
+	color: #000;	
+}
+
+p {
+	font-family: Arial;
+	font-size: 1.25em;
+	line-height: 80%;
+}
+
+#clients ul {
+	font-family: Arial;
+	font-size: 1.25em;
+}
+
+#background ul {
+	font-family: Arial;
+	font-size: 1.25em;
+}

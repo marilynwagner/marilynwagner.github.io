@@ -1,0 +1,10 @@
+/*
+File Name: print.css
+Date: 3/8/14
+Programmer: Marilyn Wagner 
+*/
+
+header, #nav, #footer, .main, .sidebar2 {
+	display: none;
+}
+
