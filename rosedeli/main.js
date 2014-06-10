@@ -6,6 +6,7 @@
 // Constants (Constants are variables that never change throughout the running of your program. 
 // They are almost always declared globally.)
 var gc_fSandwichPrice = 5.99; // Price for each sandwich (Version 1 only)
+
 var gc_fExtrasPrice = 1.50;  // Price for each extra item
 
 // GLOBAL VARS
@@ -18,12 +19,21 @@ var radSandwich;
 var radSize;
 var spanExtrasPrice;
 var chkExtras;
+var txtCreditCardNbr;
+var divCreditCardInfo;
+var txtName;
+var txtMonth;
+var selPayment;
+var selYear;
+
 
 // Other global vars
 var g_nTotal;
 var g_sSandwich;
 var g_sSize;
 var g_sExtras;
+
+
 
 // DO IT: Hook up an event handler for window.onload to the Init function.
 window.onload = Init;
@@ -32,7 +42,7 @@ function Init() {
 
 	// DO IT: Change the version number in the line below, if necessary, so it 
 	// accurately reflects this particular version of Dirty Deli.
-	document.getElementById("h1Title").innerHTML = "Dirty Deli 1.0";
+	document.getElementById("h1Title").innerHTML = "Rose's Deli";
 
 	// DO IT: grab and assign any html objects you need to work with
 	divErrors = document.getElementById("divErrors");
@@ -42,7 +52,13 @@ function Init() {
 	radSize = document.getElementsByName("radSize");
 	spanExtrasPrice = document.getElementById("spanExtrasPrice");
 	chkExtras = document.getElementsByName("chkExtras");
-	 
+	txtCreditCardNbr = document.getElementById("txtCreditCardNbr");
+	divCreditCardInfo = document.getElementById("divCreditCardInfo");	
+	txtName = document.getElementById("txtName");
+	txtMonth = document.getElementById("txtMonth");
+	selPayment = document.getElementById("selPayment");
+	selYear = document.getElementById("selYear");	
+	
 	// DO IT: Set the innerHTML of spanExtrasPrice to gc_fExtrasPrice.  Tip: Use the
 	// .toFixed() method to display it with 2 decimal places
 	spanExtrasPrice.innerHTML = Number(gc_fExtrasPrice).toFixed(2);
@@ -52,12 +68,21 @@ function Init() {
 	document.getElementById("btnCalculateTotal").onclick = CalculateTotal;
 	document.getElementById("btnProcessOrder").onclick = ProcessOrder;
 
-	// Version 2
+	// Version 2  DONE
 	// DO IT: You need to hook up an event handler that runs whenever the user selects a 
 	// different Payment option.  This is the "onchange" event.  I suggest you use an anonymous 
 	// function, and make use of the *selectedIndex* property to see if they chose the credit card.  
 	// This function will check to see if the user selected the Credit card option.  If they did, 
 	// set the CSS visibility property to "visible", otherwise set it to "hidden".
+	selPayment.onchange = 
+		function() {					
+			if (selPayment.selectedIndex === 2) {
+				divCreditCardInfo.style.visibility = 'visible';					
+			}
+			else {
+				divCreditCardInfo.style.visibility = 'hidden';
+			}			
+		};
 
 } // function Init()
 
@@ -76,38 +101,24 @@ function CalculateTotal() {
 	// will always give you garbage.  So how do you prevent this error?
 	// Same deal for g_sExtras.			
 	g_nTotal = 0;
+	g_sExtras = "";
+	g_sSandwich = ""; 
 
 	/*  DO IT:
 		Sandwich code - Version 1
 		Using an IF statement, see which radio button they checked, and assign the value of the 
 		selected sandwich to a global var name g_sSandwich.
 		If nothing is selected, set divErrors to "Select a sandwich", and exit the function.
-	*/
+	*/	
 	
-	if (radSandwich[0].checked === true) {
-		g_sSandwich = "Breast of Chicken";			
-	}
-	else if (radSandwich[1].checked === true) {
-		g_sSandwich = "Leg of Lamb";		
-	}
-	else if (radSandwich[2].checked === true) {
-		g_sSandwich = "Loin of Lamb";
-	}
-	else if (radSandwich[3].checked === true) {
-		g_sSandwich = "ReelMeat";		
-	}	
-	else {
-		divErrors.innerHTML = "Select a sandwich";	
-	}			
-		
     /*
-		Sandwich code - Version 2
+		Sandwich code - Version 2  
 		Within each IF statement remove the line of code you wrote for Version 1.  Replace it 
 		with a call to a function (that you will write) named GetSandwichName().  When you call 
 		this function, pass it one parameter - the index of the radSandwich radio button that the 
 		user checked.  More info on the function itself is given below.
 	*/
-
+	
 	// Version 3
 	/*  CONVERT: Sandwich code
 		Using a FOR loop and a single IF statement within the loop, see which radio button they checked.  
@@ -119,7 +130,19 @@ function CalculateTotal() {
 		still work.  Afterall, that's one of the reasons we're using a loop.
 		Do NOT call the GetSandwichName() function.  Incorporate its code here, and remove it.
 	*/
-
+	var didIFindSand = false;
+	for(var iSandwichIndex=0; iSandwichIndex<4; iSandwichIndex++) {	
+		if (radSandwich[iSandwichIndex].checked === true) {
+			g_sSandwich = radSandwich[iSandwichIndex].value;
+			didIFindSand = true;
+			break;
+		}
+	}
+	if (!didIFindSand) {
+		divErrors.innerHTML = "Select a sandwich";
+		return;	
+	}
+	
 	/* DO IT:
 		This is the Size code.
 		Make sure they selected a size.
@@ -132,22 +155,6 @@ function CalculateTotal() {
 		So, you need to call a function (that you will write)  named GetSizeUpdateTotal().  More on that below.
 	*/
 	
-	if (radSize[0].checked === true) {
-		g_sSize = "Manly Man";
-	}
-	else if (radSize[1].checked === true) {
-		g_sSize = "Girly Man";
-	}
-	else if (radSize[2].checked === true) {
-		g_sSize = "Super Girly Man";
-	}
-	else {
-		divErrors.innerHTML = "Please choose a size";
-		return;
-	}
-	
-	g_nTotal = gc_fSandwichPrice;
-	
 	// Version 3
 	/* CONVERT: Size code
 		Once again, using a FOR loop and a single IF statement within the loop, see which radio button they checked, 
@@ -156,7 +163,19 @@ function CalculateTotal() {
 		If nothing is selected, set divErrors to "Please choose a size", and exit the function.
 		Do NOT call the GetSizeUpdateTotal() function.  Incorporate its code here, and remove it.
 	*/
-
+	var didIFindSize = false;
+		for(var iSizeIndex=0; iSizeIndex<3; iSizeIndex++) {		
+			if (radSize[iSizeIndex].checked === true) {
+				g_sSize = radSize[iSizeIndex].value;
+				g_nTotal = Number(radSize[iSizeIndex].title.substr(1));
+				didIFindSize = true;
+				break;
+			}
+		}
+	if (!didIFindSize) {
+		divErrors.innerHTML = "Please choose a size";
+		return;	
+	}
 	/* DO IT:
 		"Extras" code - Version 1
 		Using an IF statement, see which extra(s) they checked.	For each extra selected, do the following:
@@ -164,31 +183,24 @@ function CalculateTotal() {
 		Update the Total with the price of the Extra.
 
 
-		"Extras" code - Version 2
+		"Extras" code - Version 2  
 		Remove each IF statement you wrote for Version 1.  Replace it with a call to a function (that you will write) 
 		named GetExtraUpdateTotal().   When you call this function, pass it one parameter - the index of the chkExtras 
 		checkbox that the user checked.  More info on the function itself is given below.
-	*/
-	g_sExtras = "";
-	if (chkExtras[0].checked === true) {
-		g_sExtras = g_sExtras + "Deep-Fried Spam";
-	    g_nTotal = g_nTotal + Number(gc_fExtrasPrice);
-	}	
-	if (chkExtras[1].checked === true) {
-		g_sExtras = g_sExtras + ", Toenails";
-		g_nTotal = g_nTotal + Number(gc_fExtrasPrice);
-	}
-	if (chkExtras[2].checked === true) {
-		g_sExtras = g_sExtras + ", Secret Sauce";
-		g_nTotal = g_nTotal + Number(gc_fExtrasPrice);
-	}
-
+	*/	
+	
 	// Version 3
 	/* CONVERT:	 "Extras" code
 		Again, using a FOR loop and a single IF statement within the loop, do what needs to be done.  Remember NOT to 
 		break out of the loop when you find a checked checkbox (there may be more).
 		Do NOT call the GetExtraUpdateTotal() function.  Incorporate its code here, and remove it.
 	*/
+	for(var iExtraIndex=0; iExtraIndex<3; iExtraIndex++) {
+		if(chkExtras[iExtraIndex].checked === true) {
+			g_sExtras += chkExtras[iExtraIndex].value + "<br/>";
+			g_nTotal += gc_fExtrasPrice; 					
+		}			
+	}
 
 	/* ****** That's it -- you're done with the loops. ******* */
 
@@ -202,13 +214,14 @@ function CalculateTotal() {
 
 } // function CalculateTotal
 
-// Version 2
+// Version 2 
 /* DO IT:
 	Declare function GetSandwichName().
 	This function takes one parameter, named p_iSandwichIndex, which is a radSandwich radio button index, i.e. the index of 
 	the Sandwich they selected.
 	It assigns the value of the selected sandwich to a global var name g_sSandwich.
 */
+
 // END Version 2
 
 // EXTRA CHALLENGE
@@ -229,7 +242,7 @@ function CalculateTotal() {
 	TIP:  Declare local vars as necessary.
 */
 
-// Version 2
+// Version 2 
 /* DO IT:
 	Declare function GetExtraUpdateTotal().
 	This function takes one parameter, named p_iExtraIndex, which is a chkExtras checkbox index, i.e. the index of an extra 
@@ -238,7 +251,6 @@ function CalculateTotal() {
 	Concatenate the value of the selected extra to a global var name g_sExtras.
 	Update the Total with the price of the Extra.
 */
-
 function ProcessOrder() {
 
 	// This function should run when the ProcessOrder button is clicked.
@@ -250,13 +262,19 @@ function ProcessOrder() {
 
 	// Version 2
 	// DO IT: Before you do your error checking, does anything need to be initialized to an empty string?  Now's the time to do it.
+	divErrors.innerHTML = "";
+	divErrors.style.display = "block";// comment out to see what exactly this code does
+	divOrder.innerHTML = "";
 
-
-	// Version 2
+	// Version 2 
 	// DO IT: If the name field is blank, display "Enter customer's name", set the focus and get out.
+	if (txtName.value === "") {
+		divErrors.innerHTML = "Enter customer's name";
+		txtName.focus();
+		return;
+	}
 
-
-	// Version 2
+	// Version 2  
 	/* DO IT: Credit Card Code
 		Use an IF statement to determine if the user selected the credit card option in the selPayment dropdown
 		If they did, you need to do the following:
@@ -271,7 +289,31 @@ function ProcessOrder() {
 
 		    if they neglected to select a year, display "Select a year" in divErrors, put focus on the year field and get out.
 	*/
+	if (selPayment.selectedIndex === 2) {
+		if ((txtCreditCardNbr.value === "")|| (isNaN(txtCreditCardNbr.value))) {
+			divErrors.innerHTML = "Enter your card number using only digits";
+			txtCreditCardNbr.focus();
+			return;
+		}
+		
+		if (txtMonth.value === "" || isNaN(txtMonth.value)) {
+			divErrors.innerHTML = "You must enter a number for this field";
+		    txtMonth.focus();
+		    return;
+		}
 
+		if (Number(txtMonth.value) < 1 || Number(txtMonth.value) > 12) {
+			divErrors.innerHTML = "Card Month must be between 1 and 12";
+		    txtMonth.focus();
+			return;
+		} 
+		
+		if (selYear.value === "") {
+			divErrors.innerHTML = "Select a year";
+			selYear.focus();
+			return;
+		} 		
+	}
 
 	// DO IT: Concatenate the appropriate msg into divOrder.  The Welcome msg is within an h3 tag.  Every other line is within 
 	// a p tag.  The last line is in bold.
@@ -279,10 +321,11 @@ function ProcessOrder() {
 		Do not include the user's name in the welcome message.
 		Do not include the "Paid by" statement.
 	*/
-	divOrder.innerHTML += "<h3>Welcome to Dirty Deli,</h3>";
-	divOrder.innerHTML += "<p>You have ordered a " + g_sSize + " " + g_sSandwich + " with " + g_sExtras + "</p>";
-	divOrder.innerHTML += "<p>Your Total is $" + g_nTotal + "</p>";
-	divOrder.innerHTML += "<p><strong>Have a nice day!</strong></p>";
-
+	divOrder.innerHTML += "<h3>Welcome to Rose's Deli, " + txtName.value + "</h3>";  
+	divOrder.innerHTML += "<p>You have ordered a " + g_sSize + " " + g_sSandwich + " with <br>" + g_sExtras + "</p>"; 
+	divOrder.innerHTML += "<p>Your Total is $" + g_nTotal + "</p>"; 
+	divOrder.innerHTML += "<p>Paid by " + selPayment.value + "</p>";
+	divOrder.innerHTML += "<p><strong>Have a nice day!</strong></p>"; 
+	
 
 } // function ProcessOrder
