@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Dirty Deli 1.0</title>
+<title>Rose's Deli</title>
 
 <style type="text/css">
 * {
@@ -10,11 +10,11 @@
 	padding: 0;
 }
 body {
-	background-color: #333;
+	background-color: #66FFFF;
 }
 
 #divWrapper {
-	background-color: #efe;
+	background-color: #99FFFF;
 	width: 40em;
 	border: solid black;
 	border-radius: 0 0 20px 20px;
@@ -80,26 +80,26 @@ div#divErrors {
 
 	<form name="frmMain" action="">
 
-	<h1 id="h1Title">The Deli</h1>
+	<h1 id="h1Title">Rose's Deli</h1>
 	<h2>Part 1</h2>
 
 	<h3>Sandwich</h3>
-	<label><input type="radio" name="radSandwich" value="Breast of Chicken" />Chicken Breast</label><br/>
-	<label><input type="radio" name="radSandwich" value="Leg of Lamb" />Lamb</label><br/>
-	<label><input type="radio" name="radSandwich" value="Loin of Ham" />Ham</label><br/>
-	<label><input type="radio" name="radSandwich" value="ReelMeat&reg;" />Portobello Mushroom&reg;</label><br/>
+	<label><input type="radio" name="radSandwich" value="Chicken Breast" />Chicken Breast</label><br/>
+	<label><input type="radio" name="radSandwich" value="Lamb" />Lamb</label><br/>
+	<label><input type="radio" name="radSandwich" value="Ham" />Ham</label><br/>
+	<label><input type="radio" name="radSandwich" value="Turkey" />Turkey</label><br/>
 	<br />
 
 	<h3>Size</h3>
-	<label><input type="radio" name="radSize" value="Manly Man"  title="$4.99" />Small</label>&nbsp;&nbsp;
-	<label><input type="radio" name="radSize" value="Girly Man" title="$5.99" />Medium</label>&nbsp;&nbsp;
-	<label><input type="radio" name="radSize" value="Super Girly Man" title="$6.99" />Large</label>
+	<label><input type="radio" name="radSize" value="Small"  title="$4.99" />Small ($4.99)</label>&nbsp;&nbsp;
+	<label><input type="radio" name="radSize" value="Medium" title="$5.99" />Medium ($5.99)</label>&nbsp;&nbsp;
+	<label><input type="radio" name="radSize" value="Large" title="$6.99" />Large ($6.99)</label>
 	<br /><br />
 
 	<h3>Extras ($<span id="spanExtrasPrice"></span> each)</h3>
-	<label><input type="checkbox" name="chkExtras" value="Deep-Fried Spam" />Grilled Onions</label><br />
-	<label><input type="checkbox" name="chkExtras" value="Toenails" />Cheese</label><br />
-	<label><input type="checkbox" name="chkExtras" value="Secret Sauce" />Tomatoes</label><br />
+	<label><input type="checkbox" name="chkExtras" value="Grilled Onions" />Grilled Onions</label><br />
+	<label><input type="checkbox" name="chkExtras" value="Cheese" />Cheese</label><br />
+	<label><input type="checkbox" name="chkExtras" value="Bacon" />Bacon</label><br />
 	<br /><br />
 
 	Total: <input type="text" id="txtTotal" size="5"/> <input type="button" id="btnCalculateTotal" value="Calculate Total" />
@@ -127,8 +127,6 @@ div#divErrors {
 			Month: <input type="text" id="txtMonth" size="2" />&nbsp;&nbsp;Year:
 			<select id="selYear">
 				<option value="" selected="selected"></option>
-				<option value="2012">2012</option>
-				<option value="2013">2013</option>
 				<option value="2014">2014</option>
 				<option value="2015">2015</option>
 				<option value="2016">2016</option>
