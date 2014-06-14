@@ -1,0 +1,38 @@
+@media screen and (min-width: 480px) { /* both need to be true to execute code below */
+	/*body {
+		background: navy;
+		/* */
+		/*}*/	/*first make an obvious change that will be highly visible so know media query is activated e.g. add background color of navy */
+   /*the order of these media queries is important -- original code was for mobile first -- so first media query is next size up (480px) it overrides the mobile first, then up to 660px*/
+
+/**********************************
+TWO COLUMN LAYOUT
+***********************************/
+	#primary {
+		width: 50%;
+		float: left;
+	}
+
+	#secondary {
+		width: 40%;
+		float: right;/* float to right just in case we have rare case of browser issues*/
+	}
+/**********************************
+want 3 columns  3X  we know margin has 2.5% on each side so 15% total for margin  3x=85% x=28.3333%
+***********************************/
+/**********************************
+PAGE: PORTFOLIO
+***********************************/
+	#gallery li {
+		width: 28.3333%;
+	}
+
+	#gallery li:nth-child(4n) {
+		clear: left;
+	}
+}
+@media screen and (min-width: 660px) {
+	/*body {
+		background: darkgreen;
+	}*/
+}

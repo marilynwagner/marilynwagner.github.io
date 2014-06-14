@@ -1,84 +1,66 @@
 <!DOCTYPE html>
-
-<!--
-File Name: assign3.html
-Date: 01/28/14
-Programmer: Marilyn Wagner 
--->
-
 <html>
-
-	<head>
-	
-		<title>My Portfolio</title>
-		<meta charset="utf-8">
-		<link rel="stylesheet" href="styles/assign3.css">
-		
-	</head>
-	
-	<body>
-	
-		<h1>Marilyn Wagner's Portfolio</h1>
-		<ul id="tabs">
-			<li><a href="#background">About Marilyn</a></li>
-			<li><a href="#html">HTML</a></li>
-			<li><a href="#css">CSS</a></li>
-			<li><a href="#jquery">Javascript/jQuery</a></li>
-			<li><a href="#clients">Happy Clients</a></li>
-		</ul>
-		
-		<div id="background" class="tab-section">
-			<h2>About Marilyn</h2>
-			<img src="images/marilynwagnerphoto.jpg" alt="Marilyn Wagner" height="213" width="320"><br>
-			<ul>
-			<li>President's List at Portland Community College (GPA 4.0 in Computer Information Systems)</li>
-			<li>Languages:  CSS, Bootstrap, Sass (CSS extension language), HTML, Javascript, jQuery, PHP, CodeIgniter (MVC for PHP), Responsive Web Design, AJAX, JSON, Git, SQL basics, WordPress, Java</li>
-			<li>Known as a self-starter, team player and multi-tasker</li>
-			<li>BA, Economics, Northwestern University</li>
-			</ul>
-		</div>
-		
-		<div id="html" class="tab-section">
-			<h2>HTML</h2>
-			<p>Here is some of her HTML work.</p>
-			<a href="petestropicalfish/index.html">Pete's Tropical Fish</a>&nbsp;&nbsp;&nbsp;
-			<a href="javajam4/index.html">JavaJam Coffee House</a>&nbsp;&nbsp;&nbsp;
-			<a href="LabEx3copy/Lab3.html">Mini-Photo Gallery</a>		
-		</div>
-		
-		<div id="css" class="tab-section">
-			<h2>CSS</h2>
-			<p>Here is some of her CSS work.</p>
-			<a href="csssample/text.html">An Article on Java</a>&nbsp;&nbsp;&nbsp;
-			<a href="butterflies_r_us/butterfly.html">Butterflies R Us</a>&nbsp;&nbsp;&nbsp;
-			<a href="technotea/technotea.html">Techno Tea</a>&nbsp;&nbsp;&nbsp;
-			<a href="planettravels/planettravels.html">Planet Travels</a>&nbsp;&nbsp;&nbsp;
-			<a href="tutorial_bg_images/bg_images.html">The Box Model Revisited</a>&nbsp;&nbsp;&nbsp;
-			<a href="tutorial_gallery/gallery.html">Cosmo Farmer's Photo Gallery</a>&nbsp;&nbsp;&nbsp;		
-			<a href="tutorial_sidebar/sidebar.html">A Sidebar Example</a>&nbsp;&nbsp;&nbsp;
-			<a href="tutorial_image/image.html">Cosmo Farmer's Guide</a>&nbsp;&nbsp;&nbsp;
-			
-			
-		</div>
-		
-		<div id="jquery" class="tab-section">
-			<h2>jQuery</h2>
-			<p>She programmed and designed this website with jQuery and Javascript.</p>
-			<a href="rosedeli/RoseDeli.htm">Rose's Deli</a>
-		</div>
-		
-		<div id="clients" class="tab-section">
-			<h2>Happy Clients</h2>
-			<ul>
-				<li>Cafegive Social</li>
-						
-			</ul>
-			
-		</div>
-									
-		<script src="scripts/jquery.js"></script>
-		<script src="scripts/assign3.js"></script>
-		
-	</body>
-	
+  <head>
+    <meta charset="utf-8">
+    <title>Marilyn Wagner | Web Developer</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href='http://fonts.googleapis.com/css?family=Changa+One|Open+Sans:400italic,700italic,400,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+  </head>
+  <body>
+    <header>
+      <a href="index.html" id="logo">
+        <h1>Marilyn Wagner</h1>
+        <h2>Web Developer</h2>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="selected">Portfolio</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="wrapper">
+      <section>
+        STUDENT PROJECTS
+        <ul id="gallery">
+          <li>
+            <a href="butterflies_r_us/butterfly.html">
+              <img src="img/butterfly_butterflies_common_blue_225814.jpg" alt="">
+              <p>Butterflies R Us</p>
+            </a>
+          </li>
+          <li>
+            <a href="petestropicalfish/index.html">
+              <img src="img/discus.jpg" alt="">
+              <p>Pete's Tropical Fish</p>
+            </a>
+          </li>
+          <li>
+            <a href="planettravels/planettravels.html">
+              <img src="img/planet.jpg" alt="">
+              <p>Planet Travels</p>
+            </a>
+          </li>
+          <li>
+            <a href="rosedeli/RoseDeli.htm">
+              <img src="img/rose.jpg" alt="">
+              <p>Rose's Deli</p>
+            </a>
+          </li>
+          <li>
+            <a href="technotea/technotea.html">
+              <img src="img/teapot.jpg" alt="">
+              <p>Techno Tea</p>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <footer>
+        <p>&copy; 2014 Marilyn Wagner</p>
+      </footer>
+    </div>
+  </body>
 </html>
