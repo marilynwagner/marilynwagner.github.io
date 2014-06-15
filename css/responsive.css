@@ -32,7 +32,7 @@ PAGE: PORTFOLIO
 	}
 }
 @media screen and (min-width: 660px) {
-	/*body {
-		background: darkgreen;
-	}*/
+	body {
+		background: #7F204E;
+	}
 }
