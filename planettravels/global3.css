@@ -40,14 +40,17 @@ h1, h2, p {
 h1 {
     font-family: "Cedarville Cursive", cursive;
     font-style: italic;
+    font-size: .5em;
     font-size: 64px;
-    padding-top: 0;
-    margin-top: 0;
-    margin-left: 160px;
-    margin-right: 160px;
+   	margin-left: 160px;
+ 
     padding-bottom: 0px;
-    margin-bottom:0;
+
     border-bottom: 3px #00FF00 solid; 
+    width: 100%;
+}
+h1 {
+	width: 100%;
 }
 
 h1 span {
@@ -114,7 +117,7 @@ div#content {
 	word-spacing: 7px;
 	text-align: center;
 	color: #FF33FF;
-	font-size: .60em;
+	font-size: 1.0em;
 }
 
 .go_top a:link {	
@@ -129,6 +132,7 @@ div#content {
 
 div.planet p {
 	color: #30CCFF;
+	padding-right: 100px;
 }
 	
 div.planet h2 {
@@ -137,4 +141,15 @@ div.planet h2 {
 	color: #000000;
 	padding: 3px;
 }
+
+@media (max-width: 768px) {
+	body {
+		background-color: red;
+	}
+
+@media (max-width: 480px) {
+	body {
+		background-color: white;
+	}
+
 
