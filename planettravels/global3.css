@@ -145,11 +145,22 @@ div.planet h2 {
 @media (max-width: 768px) {
 	body {
 		background-color: red;
+		float:left;
+		width:100%;
 	}
+	/*#planets {
+		width:100%;
+	}*/
+	
 
+}
 @media (max-width: 480px) {
 	body {
 		background-color: white;
+		float:left;
+		width:100%;
 	}
+
+}
 
 
