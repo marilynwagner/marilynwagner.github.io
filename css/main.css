@@ -9,7 +9,7 @@ body {
 }
 
 #wrapper {
-  max-width: 900px;
+  max-width: 90%;
   margin: 0 auto;
   padding: 0 5%;
 }
@@ -213,7 +213,7 @@ nav {
 }
 
 #wrapper {
-  background-color: #4C4C4C;
+  background-color: #4C4C4C;/*dark grey*/
 }
 
 /* logo text */
