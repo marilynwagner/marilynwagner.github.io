@@ -1,7 +1,9 @@
 /**********************************
 GENERAL
 ***********************************/
-
+html {
+    background-color: #4C4C4C;
+}
 body {
   font-family: 'Open Sans', sans-serif;
 }
@@ -51,12 +53,14 @@ h1 {
 }
 
 h2 {
-  font-size: 0.75em;
+  font-size: 1.0em;
   margin: -5px 0 0;
   font-weight: normal;
 }
 
-
+header h1 {
+  color: #541634;
+}
 
 /**********************************
 NAVIGATION
@@ -163,6 +167,8 @@ PAGE: CONTACT
   background-size: 20px 20px;
   padding: 0 0 0 30px;
   margin: 0 0 10px;
+  color: #541634;
+  font-weight: bold;
 }
 
 .contact-info li.phone a {
@@ -185,6 +191,8 @@ COLORS
 /* site body */
 body {
   background-color: #fff;
+  
+
   color: #999;
 }
 
@@ -192,14 +200,20 @@ body {
 header {
   /*background: #6ab47b;*/
   /*border-color: #599a68;*/
-  background: #DC5E9B;
+  /*background: #DC5E9B;*/
+  background: #B2B2B2;/*light grey*/
   border-color: black;
 }
 
 /* nav background on mobile */
 nav {
   /*background: #599a68;*/
-  background: #D33682;
+  /*background: #D33682;*/
+  background: #808080;/*medium grey*/
+}
+
+#wrapper {
+  background-color: #4C4C4C;
 }
 
 /* logo text */

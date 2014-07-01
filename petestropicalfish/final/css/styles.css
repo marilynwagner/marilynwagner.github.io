@@ -1,0 +1,21 @@
+.store {
+
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lead {
+	font-weight: bold;
+	color: black;
+}
+footer {
+	clear: both;
+}
+
+section p {
+	color: black;
+	font-weight:bold;
+}
+
+

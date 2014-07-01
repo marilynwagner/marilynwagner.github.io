@@ -1,27 +1,48 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Rose's Deli</title>
+	<meta name="viewport" content="width=device-width">
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<meta charset="utf-8" />
+	<title>Rose's Deli</title>
 
 <style type="text/css">
 * {
 	margin: 0;
 	padding: 0;
 }
+
 body {
+	margin: 3%;
 	background-color: #9999CC;
 }
-
+.dropdown {
+	position: relative;
+}
 #divWrapper {
 	background-color: #D33682;
-	width: 40em;
+	width: 98%;
 	border: solid black;
-	border-radius: 0 0 20px 20px;
+	border-radius: 20px 20px 20px 20px;
 	border-width: 0 1px 1px 1px;
 	margin: 0 auto;
 	padding: 2em 1em;
 }
+/*.sidebar1 {
+	float: left;
+	width: 20%;
+	padding: 0 20px 0 10px;
+}
+.main {
+	float: left;
+	width: 30%;
+	padding: 0 20px 0 20px;
+}
+.sidebar2 {
+	float: right;
+	width: 30%;
+	padding: 0 10px 0 20px;
+}*/
 
 h2 {
 	font-style: italic;
@@ -48,8 +69,8 @@ div#divErrors {
 #divPaymentInfo {
 	margin: 10px 0 20px 0;
 	padding-bottom: 10px;
-	border: solid black;
-	border-width: 1px 0;
+	/*border: solid black;
+	border-width: 1px 0;*/
 }
 
 #divCreditCardInfo {
@@ -62,59 +83,222 @@ div#divErrors {
 #divOrder {
 	background: white;
 	min-height: 10em;
-	width: 25em;
-	border: 1px solid black;
+	width: 50%;
+	/*border: 1px solid black;*/
 	margin: 0.5em 0;
 	padding: 10px;
 }
+footer {
+	clear: both;
+}
+@media (max-width: 960px) {
+	
+	
+}
+@media (max-width: 480px) {
+	
+	
+	/*.sidebar1 {
+		float: none;
+		
+		width: auto;
+	}
+	.main {
+		float: none;
+		
+		width: auto;
+	}
+	.sidebar2 {
+		float: none;	
+		
+		width: auto;
+	}*/
+}
 
 </style>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
 
 <script type="text/javascript" src="main.js"></script>
 
 </head>
 
 <body>
-
 <div id="divWrapper">
+<form role="form">
 
-	<form name="frmMain" action="">
+
+<form name="frmMain" action="">
 
 	<h1 id="h1Title">Rose's Deli</h1>
-	<h2>Part 1</h2>
 
-	<h3>Sandwich</h3>
-	<label><input type="radio" name="radSandwich" value="Chicken Breast" />Chicken Breast</label><br/>
-	<label><input type="radio" name="radSandwich" value="Lamb" />Lamb</label><br/>
-	<label><input type="radio" name="radSandwich" value="Ham" />Ham</label><br/>
-	<label><input type="radio" name="radSandwich" value="Turkey" />Turkey</label><br/>
-	<br />
+<div class="row">
+  <div class="col-xs-6 col-sm-4">
+<h3>Sandwich</h3>
+ 
+ <div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+    Chicken Breast
+  </label>
+</div>
 
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+    Lamb
+  </label>
+</div>
+
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+    Ham
+  </label>
+</div>
+
+</div>
+
+
+
+  <div class="col-xs-6 col-sm-4">
 	<h3>Size</h3>
-	<label><input type="radio" name="radSize" value="Small"  title="$4.99" />Small ($4.99)</label>&nbsp;&nbsp;
-	<label><input type="radio" name="radSize" value="Medium" title="$5.99" />Medium ($5.99)</label>&nbsp;&nbsp;
-	<label><input type="radio" name="radSize" value="Large" title="$6.99" />Large ($6.99)</label>
-	<br /><br />
+	<!--<label><input type="radio" name="radSize" value="Small"  title="$4.99" />Small ($4.99)</label>&nbsp;&nbsp;<br>
+	<label><input type="radio" name="radSize" value="Medium" title="$5.99" />Medium ($5.99)</label>&nbsp;&nbsp;<br>
+	<label><input type="radio" name="radSize" value="Large" title="$6.99" />Large ($6.99)</label>-->
 
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+    Small ($4.99)
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+    Medium ($5.99)
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+    Large ($6.99)
+  </label>
+</div>	
+  </div>
+  <!-- Optional: clear the XS cols if their content doesn't match in height 
+  <div class="clearfix visible-xs-block"></div>-->
+  <div class="col-xs-6 col-sm-4">
 	<h3>Extras ($<span id="spanExtrasPrice"></span> each)</h3>
-	<label><input type="checkbox" name="chkExtras" value="Grilled Onions" />Grilled Onions</label><br />
-	<label><input type="checkbox" name="chkExtras" value="Cheese" />Cheese</label><br />
-	<label><input type="checkbox" name="chkExtras" value="Bacon" />Bacon</label><br />
-	<br /><br />
+	<!--<label><input type="radio" name="radSize" value="Small"  title="$4.99" />Small ($4.99)</label>&nbsp;&nbsp;<br>
+	<label><input type="radio" name="radSize" value="Medium" title="$5.99" />Medium ($5.99)</label>&nbsp;&nbsp;<br>
+	<label><input type="radio" name="radSize" value="Large" title="$6.99" />Large ($6.99)</label>-->
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+    Grilled Onions
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+    Cheese
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+    Bacon
+  </label>
+</div>	
 
-	Total: <input type="text" id="txtTotal" size="5"/> <input type="button" id="btnCalculateTotal" value="Calculate Total" />
+  </div>
+</div>
+
+	
+<div class="sidebar1">	
+	<!--<span><label><input type="radio" name="radSandwich" value="Chicken Breast" />Chicken Breast</label></span><br>
+	<label><input type="radio" name="radSandwich" value="Lamb" />Lamb</label><br>
+	<label><input type="radio" name="radSandwich" value="Ham" />Ham</label><br>-->
+</div>
+
+
+<div class="main">
+
+</div>
+
+<div class="sidebar2">		
+<!--	<label><input type="radio" name="chkExtras" value="Grilled Onions" />Grilled Onions</label><br>
+	<label><input type="radio" name="chkExtras" value="Cheese" />Cheese</label><br>
+	<label><input type="radio" name="chkExtras" value="Bacon" />Bacon</label><br>-->
+</div>
+<br>
+<br>
+<br>
+<br>
+
+<div class="row">
+
+  <div class="col-xs-6 col-sm-4">
+<!--Bootstrap default button--><button type="button" class="btn btn-default">Calculate Total</button>
+<br>
+<div class="form-group">
+    <label for="exampleInputEmail1">Total</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="">
+  </div>
+
+  
+<br><br>
+<!--Total: <input type="text" id="txtTotal" size="5"/> <input type="button" id="btnCalculateTotal" value="Calculate Total" />
+-->
+
+
 	<br /><br />
 
 	<div id="divErrors"></div>
 
 
-	<div id="divPaymentInfo">
-		<h2>Part 2</h2>
+	
 
-		<strong>Customer's Name:</strong> <input type="text" id="txtName" />
+  </div><!--end of column1-->
+
+  <div class="col-xs-6 col-sm-4">
+
+  	<div class="form-group">
+    <label for="exampleInputEmail1">Customer Name</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your name">
+  </div>
+
+  <div class="btn-group">
+  <button type="button" class="btn btn-danger">Cash</button>
+  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+    <span class="caret"></span>
+    <span class="sr-only">Toggle Dropdown</span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="#">Cash</a></li>
+    <li><a href="#">Check</a></li>
+    <li><a href="#">Credit Card</a></li>
+    <li class="divider"></li>
+    <!--<li><a href="#">Separated link</a></li>-->
+  </ul>
+</div><!--end Split Button Bootstrap dropdown  -->
+
+ <!-- <strong>Customer's Name:</strong> <input type="text" id="txtName" />-->
 		<br /><br />
 
-		<strong>Payment:</strong>
+
+</div>
+
+
+		<!--<div id="divPaymentInfo">-->
+<!--from Bootstrap Split Button Dropdown menu-->			
+
+
+
+	<!--	<strong>Payment:</strong>
 		<select id="selPayment">
 			<option value="Cash" selected="selected">Cash</option>
 			<option value="Check">Check</option>
@@ -132,22 +316,41 @@ div#divErrors {
 				<option value="2016">2016</option>
 				<option value="2010">2017</option>
 				<option value="2011">2018</option>
-			</select>
+			</select>-->
 
-		</div><!-- divCreditCardInfo -->
+		<!--</div>--><!-- divCreditCardInfo -->
 
-	</div><!-- divPaymentInfo -->
+	<!--</div>--><!-- divPaymentInfo -->
+
+	<!--</div>--><!--end of column 2-->
+
+  <div class="col-xs-6 col-sm-4">
+  	<!--Bootstrap default button--><button type="button" class="btn btn-default">Process Order</button>
+  	<textarea class="form-control" rows="3"></textarea>
+<!--<input type="button" id="btnProcessOrder" value="Process Order" />-->
+
+	<!--<div id="divOrder"></div>-->
+	<!--<textarea class="form-control" id="divOrder" rows="3"></textarea>
+
+	<input type="reset" value="Reset" />-->
+
+  </div><!--end of column 3-->
 
 
-	<input type="button" id="btnProcessOrder" value="Process Order" />
+</div><!-- end of div row-->
 
-	<div id="divOrder"></div>
+<footer>
+	
+		
 
-	<input type="reset" value="Reset" />
+		
+
+
+	
 
 	</form>
 
 </div> <!-- divWrapper -->
-
+</footer>
 </body>
 </html>
