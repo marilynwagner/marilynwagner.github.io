@@ -223,6 +223,13 @@ nav a.selected, nav a:hover {
 }
 
 
+.navbar-toggle .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: #cccccc;
+  border-radius: 1px;
+}
 
 
 
