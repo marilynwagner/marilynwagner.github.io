@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>A Slide In Dashboard</title>
+	<link href="style/site.css" rel="stylesheet">
+	<style>
+		#dashboard {
+			width: 70px;
+			background-color: black;
+			padding: 20px 20px 0 20px;
+			position: absolute;
+			left: -92px;
+			z-index: 100;
+		}
+		#dashboard img {
+			margin-bottom: 20px;
+			border: 1px solid rgb(0,0,0);
+		}
+	</style>
+	<script src="js/jquery-1.7.2.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.color.js"></script>
+	<script>
+		$(document).ready(function() {
+  			$('#dashboard').hover(
+     			function() {
+					$(this).stop().animate(
+					{
+						left: '0',
+						backgroundColor: 'rgb(255,255,255)'
+					},
+					500,
+					'easeInSine'
+					); // end animate
+	 			}, 
+	 			function() {
+		 			$(this).stop().animate(
+					{
+						left: '-92px',
+						backgroundColor: 'rgb(110,138,195)'		
+					},
+					1500,
+					'easeOutBounce'
+					); // end animate
+	 			}
+  			); // end hover
+		}); // end ready
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="header">
+			<p class="title">Example of jQuery Animation</p>
+		</div>
+		<div id="dashboard">			
+				<img src="images/mars.jpg" width="70" height="70" alt="mars">				
+				<img src="images/earth.jpg" width="70" height="70" alt="earth">						
+				<img src="images/venus.jpg" width="70" height="70" alt="venus">
+				<img src="images/neptune.jpg" width="70" height="70" alt="neptune">				
+				<img src="images/mercury.jpg" width="70" height="70" alt="mercury">				
+				<img src="images/jupiter.jpg" width="70" height="70" alt="jupiter">		
+		</div>
+		<div class="content">
+			<div class="main">
+				<h1>Slide in Dashboard</h1>
+				<p>Mouse over the black stripe on the left edge of this page</p>
+			</div>
+		</div>
+		<div class="footer">
+			<p>Marilyn Wagner 2014</p>
+		</div>
+	</div>
+</body>
+</html>
