@@ -133,15 +133,6 @@ em {
 	margin: 20px 0 0 100px;
 }
 
-.footer {
-	position: fixed;
-	bottom: 0;
-	left: 100px;
-	width: 100%;
-	padding-top: 18px;
-	background: url(../_images/bg-footer.png) repeat-x left top;
-}
-
 .logo {
 	letter-spacing: -1px;
 	color: rgb(195,151,51);
@@ -254,17 +245,6 @@ fieldset {
 .nav a:hover, .example:hover{
 	background-color: rgba(255,255,255,.85);
 	color: rgb(0,0,0);
-}
-
-.footer p {
-	font-size: 14px;
-	font-family: 'ColaborateLightRegular', Arial, sans-serif;
-	padding: .5em .25em .5em 1em;
-	color:rgb(55,76,119);
-	background: rgb(110,138,195);
-	-moz-border-radius: 2px 0 0 0;
-	border-radius: 2px 0 0 0;
-	margin: 0;
 }
 
 #resources {
@@ -528,4 +508,27 @@ form .indent, #submit {
 	float: left;
 	margin-bottom: 5px;
 	margin-right: 5px;
+}
+
+.footer {
+	position: fixed;
+	bottom: 0;
+	left: 10%;
+	right: 10%;
+	width: 100%;
+	padding-top: 18px;
+}
+
+.footer p {
+	font-size: 14px;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	text-align: center;
+	padding: .5em;
+	color:rgb(55,76,119);
+	background-color: #69758D;
+	-moz-border-radius: 2px 0 0 0;
+	border-radius: 2px 0 0 0;
+	margin: 0;
+	width: 70%;
 }
