@@ -70,12 +70,12 @@ $(document).ready(function() {
 	<h1>Sign Up</h1>
 		<form action="http://webdevbasics.net/scripts/demo.php" method="post" name="signup" id="signup">
 			<div>
-				<label for="name" class="label">First Name </label>
-				<input name="name" type="text" class="required" id="name" title="Please type your first name.">
+				<label for="first_name" class="label">First Name </label>
+				<input name="first_name" type="text" class="required" id="name" title="Please type your first name.">
 			</div>
 			<div>
-				<label for="name" class="label">Last Name </label>
-				<input name="name" type="text" class="required" id="name" title="Please type your last name.">
+				<label for="last_name" class="label">Last Name </label>
+				<input name="last_name" type="text" class="required" id="name" title="Please type your last name.">
 			</div>
 			<div>
 				<label for="email" class="label">E-mail Address</label>
@@ -90,16 +90,16 @@ $(document).ready(function() {
 				<input name="confirm_password" type="password" id="confirm_password">
 			</div>
 			<div><span class="label">Favorite Pet</span>
-				<input name="hobby" type="checkbox" id="heliskiing" value="heliskiing" class="required" title="Please check at least 1 hobby.">
-				<label for="heliskiing">Dog</label>
-				<input name="hobby" type="checkbox" id="pickle" value="pickle">
-				<label for="pickle">Cat</label>
-				<input name="hobby" type="checkbox" id="walnut" value="walnut">
-				<label for="walnut">Rabbit</label>
+				<input name="favorite_pet" type="checkbox" id="dog" value="dog" class="required" title="Please indicate your favorite pet.">
+				<label for="dog">Dog</label>
+				<input name="favorite_pet" type="checkbox" id="cat" value="cat">
+				<label for="cat">Cat</label>
+				<input name="favorite_pet" type="checkbox" id="rabbit" value="rabbit">
+				<label for="rabbit">Rabbit</label>
 			</div>
 			<div>
-				<label for="dob" class="label">Date of birth</label>
-				<input name="dob" type="text" id="dob" class="date" title="Please type your date of birth using this format: 01/19/2000">
+				<label for="date_of_birth" class="label">Date of birth</label>
+				<input name="date_of_birth" type="text" id="date_of_birth" class="date" title="Please type your date of birth using this format: 01/19/2000.">
 			</div>
 			<div>
 				<label for="continent" class="label">Continent of Birth</label>
