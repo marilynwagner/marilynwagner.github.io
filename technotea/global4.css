@@ -5,48 +5,29 @@ Programmer: Marilyn Wagner
 */
 
 
-body {
-	
+body {	
 	background-color: #8DCFFA;
 }
-
-
-
 h3 {
 	text-transform: lowercase;
 	text-align: center;
 	border-bottom: 2px solid white;
 }
-
 a:hover {
 	color: white; 
 	background-color: #729BCF;
 	padding: 3px 25px 5px 3px;
 	display: block;
 }
-
-a {
-	
+a {	
 	text-decoration: none;
 	color: #29297C;
 	font-style: italic;
 	font-weight: bold;
 	padding-left: 10px;
 	display: block;
-
 }
-
-/*#banner {
-	margin-bottom: 5%;
-	background-image: url(technoTeaImages/teapot_cup.png);
-	background-repeat: no-repeat;
-	background-size: 225px 110px;
-	background-position: 30% 60%;
-	padding: 8px;	
-	
-}*/
-h1 #header1 {
-	
+h1 #header1 {	
 	font-family: Audiowide;
 	font-style: italic;
 	text-transform: uppercase;
@@ -70,15 +51,12 @@ h2 {
     -moz-transition: opacity .25s ease-in-out;
     -webkit-transition: opacity .25s ease-in-out;
 }
-
 h2:hover {
     opacity: 0.5;
 }
-
 h2 span {
 	color: #C0E87C;
 }
-
 h4 {
 	font-family: Arial;
 	font-size: 2.0em;
@@ -99,41 +77,23 @@ img {
 	-moz-box-shadow: 10px 10px 5px #888;
 	-webkit-box-shadow: 10px 10px 5px #888;
 	box-shadow: 10px 10px 5px #888;
-}
-	
+}	
 #sidebar {
 	width: 30%;
 	float: left;
-	margin: 3%;
-	
+	margin: 3%;	
 	background-color: #CEE8AD;
 	padding: 10px;
 	border: 1px dashed #000000;
 	border-top: 20px solid #8DCFFA;
 	border-radius: 10px;
-
-
 }
-
-/*#sidebar p {
-	width: 50%;
-  height: 50%;
-  overflow: auto;
-  margin: auto;
-  position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
-		
-}*/
-
 #content {
-
 	background-color: #E4FF83;
 	font-size: .90em;
 	font-family: Arial;
 	margin-right: 3%;
 	margin-left: 3%;
-	/*margin-left: 15px;
-	margin-right: 15px;*/
 	margin-top: 17%;
 	padding: 10px 20px;
 	color: black;
@@ -146,18 +106,23 @@ img {
 	background: linear-gradient(to right, #E4FF83 0%,#75BDDD 100%); 
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E4FF83', endColorstr='#75BDDD',GradientType=1 ); 
 }
-
 #today {
 	float: right;
 	color: #FFFFFF;
 	font-size: 1.0em;
 	font-family: arial;
 	margin-right: 5%;
-	/*margin-bottom: 5%;*/
-	p
 }
-
 #footer {
 	font-size: small;
 	margin: 15px;
+}
+@media query (max-width: 786px) {
+	
+
+}
+
+@media query (max-width: 480px) {
+#
+	
 }

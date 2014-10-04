@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Form Validation</title>
+	<link href="css/site.css" rel="stylesheet">
+	<style>
+		#signup .indent label.error {
+  			margin-left: 0;
+		}
+		#signup label.error {
+		  font-size: 0.8em;
+		  color: #F00;
+		  font-weight: bold;
+		  display: block;
+		  margin-left: 215px;
+		}
+		#signup  input.error, #signup select.error  {
+		  background: #FFA9B8;
+		  border: 1px solid red;
+		}
+	</style>
+	<script src="js/jquery-1.7.2.min.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
+	<script>
+		$(document).ready(function() {
+ 			$('#signup').validate({
+   
+		   		rules: {
+		     		email: {
+		        		required: true,
+		        		email: true
+		     		},
+		     		password: {
+		        		required: true,
+		        		rangelength:[8,16]
+		     		},
+			     	confirm_password: {equalTo:'#password'},
+			     	spam: "required"
+			   	}, //end rules
+			   	messages: {
+			      	email: {
+			       		required: "Please supply an e-mail address.",
+			         	email: "This is not a valid email address."
+			    	},
+			    	password: {
+			        	required: 'Please type a password',
+			        	rangelength: 'Password must be between 8 and 16 characters long.'
+			    	},
+			    	confirm_password: {
+			        equalTo: 'The two passwords do not match.'
+			      	}
+			   	},
+			   	errorPlacement: function(error, element) { 
+			       	if ( element.is(":radio") || element.is(":checkbox")) {
+			          	error.appendTo( element.parent()); 
+			        } else {
+			          	error.insertAfter(element);
+			        } 
+			    } 
+  			}); // end validate 
+		}); // end ready
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="content">
+			<div class="main">
+				<h1>Sign Up</h1>
+				<form action="http://webdevbasics.net/scripts/demo.php" method="post" name="signup" id="signup">
+					<div>
+						<label for="first_name" class="label">First Name </label>
+						<input name="first_name" type="text" class="required" id="name" title="Please type your first name.">
+					</div>
+					<div>
+						<label for="last_name" class="label">Last Name </label>
+						<input name="last_name" type="text" class="required" id="name" title="Please type your last name.">
+					</div>
+					<div>
+						<label for="email" class="label">E-mail Address</label>
+						<input name="email" type="text" id="email">
+					</div>
+					<div>
+						<label for="password" class="label">Password</label>
+						<input name="password" type="password" id="password">
+					</div>
+					<div>
+						<label for="confirm_password" class="label">Confirm Password</label>
+						<input name="confirm_password" type="password" id="confirm_password">
+					</div>
+					<div><span class="label">Favorite Pet</span>
+						<input name="favorite_pet" type="checkbox" id="dog" value="dog" class="required" title="Please indicate your favorite pet.">
+						<label for="dog">Dog</label>
+						<input name="favorite_pet" type="checkbox" id="cat" value="cat">
+						<label for="cat">Cat</label>
+						<input name="favorite_pet" type="checkbox" id="other" value="other">
+						<label for="rabbit">Other</label>
+					</div>
+					<div>
+						<label for="date_of_birth" class="label">Date of birth</label>
+						<input name="date_of_birth" type="text" id="date_of_birth" class="date" title="Please type your date of birth using this format: 01/19/2000.">
+					</div>
+					<div>
+						<label for="continent" class="label">Continent of Birth</label>
+						<select name="continent" id="continent" class="required" title="Please choose a continent.">
+							<option value="">--Please select one--</option>
+							<option value="asia">Asia</option>
+							<option value="africa">Africa</option>
+							<option value="north america">North America</option>
+							<option value="antarctica">Antarctica</option>
+							<option value="europe">Europe</option>
+							<option value="south america">South America</option>
+							<option value="australia">Australia</option>
+						</select>
+					</div>
+					<div>
+						<label for="comments" class="label">Comments</label>
+						<textarea name="comments" cols="36" rows="5" id="comments"></textarea>
+					</div>
+					<div class="labelBlock">WOULD YOU LIKE TO RECEIVE FUTURE E-MAILS FROM US?</div>
+					<div class="indent">
+						<input  type="radio" name="spam" id="yes" value="yes" class="required" title="Please select an option">
+						<label for="yes">Yes</label>
+						<input type="radio" name="spam" id="no" value="no">
+						<label for="no">No</label>
+					</div>
+					<div>
+						<input type="submit" name="submit" id="submit" value="Submit">
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="footer">
+			<p>Marilyn Wagner 2014</p>
+		</div>
+	</div>
+</body>
+</html>
