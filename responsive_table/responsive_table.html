@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='UTF-8'>
+	
+	<title>Responsive Table</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="css/style.css">
+	
+	<!--[if !IE]><!-->
+	<style>
+	
+	/* 
+	Max width before this PARTICULAR table gets nasty
+	This query will take effect for any screen smaller than 760px
+	and also iPads specifically.
+	*/
+	@media 
+	only screen and (max-width: 760px),
+	(min-device-width: 768px) and (max-device-width: 1024px)  {
+	
+		/* Force table to not be like tables anymore */
+		table, thead, tbody, th, td, tr { 
+			display: block; 
+		}
+		
+		/* Hide table headers (but not display: none;, for accessibility) */
+		thead tr { 
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+		
+		tr { border: 1px solid #ccc; }
+		
+		td { 
+			/* Behave  like a "row" */
+			border: none;
+			border-bottom: 1px solid #eee; 
+			position: relative;
+			padding-left: 50%; 
+		}
+		
+		td:before { 
+			/* Now like a table header */
+			position: absolute;
+			/* Top/left values mimic padding */
+			top: 6px;
+			left: 6px;
+			width: 45%; 
+			padding-right: 10px; 
+			white-space: nowrap;
+		}
+		
+		/*
+		Label the data
+		*/
+		td:nth-of-type(1):before { content: "First Name"; }
+		td:nth-of-type(2):before { content: "Last Name"; }
+		td:nth-of-type(3):before { content: "Birthdate"; }
+		td:nth-of-type(4):before { content: "Gender"; }
+		td:nth-of-type(5):before { content: "Weight"; }
+		td:nth-of-type(6):before { content: "Overall Health"; }
+		td:nth-of-type(7):before { content: "Blood Pressure"; }
+		td:nth-of-type(8):before { content: "Temperature"; }
+		td:nth-of-type(9):before { content: "Oxygen Level"; }
+		td:nth-of-type(10):before { content: "Pulse"; }
+	}
+	
+	/* Smartphones (portrait and landscape) ----------- */
+	@media only screen
+	and (min-device-width : 320px)
+	and (max-device-width : 480px) {
+		body { 
+			padding: 0; 
+			margin: 0; 
+			width: 320px; }
+		}
+	
+	/* iPads (portrait and landscape) ----------- */
+	@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+		body { 
+			width: 495px; 
+		}
+	}
+	
+	</style>
+	<!--<![endif]-->
+
+</head>
+
+<body>
+
+<div id="demo-top-bar">
+
+  <div id="demo-bar-inside">
+
+    <h2 id="demo-bar-badge">
+      
+    </h2>
+
+    <div id="demo-bar-buttons">
+      </div>
+
+  </div>
+
+</div>
+	<div id="page-wrap">
+
+	<h1>Responsive Table</h1>
+  
+
+    
+	<p>Try resizing the browser.  There are @media queries applied to this table so that when the screen is too narrow, it reformats (via CSS only) to make each row like it's own table. Consequently, only natural vertical scrolling is needed to explore the data.</p>
+    
+	<table>
+		<thead>
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Birthdate</th>
+			<th>Gender</th>
+			<th>Weight</th>
+			<th>Overall Health</th>
+			<th>Blood Pressure</th>
+			<th>Temperature</th>
+			<th>Oxygen Level</th>
+			<th>Pulse</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>Mary</td>
+			<td>Martin</td>
+			<td>9/10/70</td>
+			<td>Female</td>
+			<td>100</td>
+			<td>good</td>
+			<td>120/80</td>
+			<td>98.6</td>
+			<td>98</td>
+			<td>60</td>
+		</tr>
+		<tr>
+		  <td>Jane</td>
+			<td>Campbell</td>
+			<td>8/2/82</td>
+			<td>Female</td>
+			<td>100</td>
+			<td>fair</td>
+			<td>130/90</td>
+			<td>98.6</td>
+			<td>98</td>
+			<td>70</td>
+		</tr>
+		<tr>
+		  <td>Bob</td>
+			<td>Sutton</td>
+			<td>5/4/91</td>
+			<td>Male</td>
+			<td>340</td>
+			<td>bad</td>
+			<td>150/100</td>
+			<td>98.9</td>
+			<td>99</td>
+			<td>80</td>
+		</tr>
+		<tr>
+		  <td>Ted</td>
+			<td>Orman</td>
+			<td>4/8/90</td>
+			<td>Male</td>
+			<td>200</td>
+			<td>good</td>
+			<td>120/80</td>
+			<td>98.1</td>
+			<td>97</td>
+			<td>70</td>
+		</tr>
+		<tr>
+		  <td>Alice</td>
+			<td>Allen</td>
+			<td>3/7/79</td>
+			<td>Female</td>
+			<td>130</td>
+			<td>fair</td>
+			<td>130/84</td>
+			<td>98.8</td>
+			<td>98</td>
+			<td>69</td>
+		</tr>
+		<tr>
+			<td>Sally</td>
+			<td>Jones</td>
+			<td>9/10/70</td>
+			<td>Female</td>
+			<td>100</td>
+			<td>good</td>
+			<td>120/80</td>
+			<td>98.6</td>
+			<td>98</td>
+			<td>60</td>
+		</tr>
+		<tr>
+		  <td>Gregg</td>
+			<td>Merkley</td>
+			<td>8/2/82</td>
+			<td>Male</td>
+			<td>100</td>
+			<td>fair</td>
+			<td>130/90</td>
+			<td>98.6</td>
+			<td>98</td>
+			<td>70</td>
+		</tr>
+		<tr>
+		  <td>Tyra</td>
+			<td>Koehler</td>
+			<td>5/4/91</td>
+			<td>Female</td>
+			<td>340</td>
+			<td>bad</td>
+			<td>150/100</td>
+			<td>98.9</td>
+			<td>99</td>
+			<td>80</td>
+		</tr>
+		<tr>
+		  <td>Charles</td>
+			<td>Lazzarino</td>
+			<td>4/8/90</td>
+			<td>Male</td>
+			<td>200</td>
+			<td>good</td>
+			<td>120/80</td>
+			<td>98.1</td>
+			<td>97</td>
+			<td>70</td>
+		</tr>
+		<tr>
+		  <td>Sarah</td>
+			<td>Allen</td>
+			<td>3/7/79</td>
+			<td>Female</td>
+			<td>130</td>
+			<td>fair</td>
+			<td>130/84</td>
+			<td>98.8</td>
+			<td>98</td>
+			<td>69</td>
+		</tr>
+		<tr>
+			<td>Jean</td>
+			<td>Terry</td>
+			<td>9/10/70</td>
+			<td>Female</td>
+			<td>100</td>
+			<td>good</td>
+			<td>120/80</td>
+			<td>98.6</td>
+			<td>98</td>
+			<td>60</td>
+		</tr>
+		<tr>
+		  <td>Grant</td>
+			<td>Markin</td>
+			<td>8/2/82</td>
+			<td>Male</td>
+			<td>100</td>
+			<td>fair</td>
+			<td>130/90</td>
+			<td>98.6</td>
+			<td>98</td>
+			<td>70</td>
+		</tr>
+		<tr>
+		  <td>Tony</td>
+			<td>McKay</td>
+			<td>5/4/91</td>
+			<td>Male</td>
+			<td>340</td>
+			<td>bad</td>
+			<td>150/100</td>
+			<td>98.9</td>
+			<td>99</td>
+			<td>80</td>
+		</tr>
+		<tr>
+		  <td>Milt</td>
+			<td>Davis</td>
+			<td>4/8/90</td>
+			<td>Male</td>
+			<td>200</td>
+			<td>good</td>
+			<td>120/80</td>
+			<td>98.1</td>
+			<td>97</td>
+			<td>70</td>
+		</tr>
+		<tr>
+		  <td>Kay</td>
+			<td>Kornfield</td>
+			<td>3/7/79</td>
+			<td>Female</td>
+			<td>130</td>
+			<td>fair</td>
+			<td>130/84</td>
+			<td>98.8</td>
+			<td>98</td>
+			<td>69</td>
+		</tr>
+		<tr>
+			<td>Susan</td>
+			<td>Childs</td>
+			<td>9/10/70</td>
+			<td>Female</td>
+			<td>100</td>
+			<td>good</td>
+			<td>120/80</td>
+			<td>98.6</td>
+			<td>98</td>
+			<td>60</td>
+		</tr>
+		<tr>
+		  <td>Carolyn</td>
+			<td>Covey</td>
+			<td>8/2/82</td>
+			<td>Female</td>
+			<td>100</td>
+			<td>fair</td>
+			<td>130/90</td>
+			<td>98.6</td>
+			<td>98</td>
+			<td>70</td>
+		</tr>
+		<tr>
+		  <td>Marc</td>
+			<td>Miller</td>
+			<td>5/4/91</td>
+			<td>Male</td>
+			<td>340</td>
+			<td>bad</td>
+			<td>150/100</td>
+			<td>98.9</td>
+			<td>99</td>
+			<td>80</td>
+		</tr>
+		<tr>
+		  <td>Joe</td>
+			<td>Jackson</td>
+			<td>4/8/90</td>
+			<td>Male</td>
+			<td>200</td>
+			<td>good</td>
+			<td>120/80</td>
+			<td>98.1</td>
+			<td>97</td>
+			<td>70</td>
+		</tr>
+		<tr>
+		  <td>Jane</td>
+			<td>Doe</td>
+			<td>3/7/79</td>
+			<td>Female</td>
+			<td>130</td>
+			<td>fair</td>
+			<td>130/84</td>
+			<td>98.8</td>
+			<td>98</td>
+			<td>69</td>
+		</tr>
+		<tr>
+		  <td>Ellen</td>
+			<td>Eisner</td>
+			<td>3/7/79</td>
+			<td>Female</td>
+			<td>130</td>
+			<td>fair</td>
+			<td>130/84</td>
+			<td>98.8</td>
+			<td>98</td>
+			<td>69</td>
+		</tr>
+		</tbody>
+	</table>
+
+	
+	</div>
+	
+ <style type="text/css" style="display: none !important;">
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	body {
+		overflow-x: hidden;
+	}
+	/*top bar*/
+	#demo-top-bar {
+		text-align: left;
+		background: #222;  
+		position: relative;
+		zoom: 1;
+		width: 100% !important;
+		z-index: 6000;
+		padding: 20px 0 20px;
+	}
+	#demo-bar-inside {
+		width: 960px;
+		margin: 0 auto;
+		position: relative;
+	}
+	#demo-bar-buttons {
+		padding-top: 10px;
+		float: right;
+	}
+	#demo-bar-buttons a {
+		font-size: 12px;
+		margin-left: 20px;
+		color: white;
+		margin: 2px 0;
+		text-decoration: none;
+		font: 14px "Lucida Grande", Sans-Serif !important;
+	}
+	#demo-bar-buttons a:hover,
+	#demo-bar-buttons a:focus {
+		text-decoration: underline;
+	}
+	#demo-bar-badge {
+		display: inline-block;
+		width: 302px;
+		padding: 0 !important;
+		margin: 0 !important;
+		background-color: transparent !important;
+	}
+	#demo-bar-badge a {
+		display: block;
+		width: 100%;
+		height: 38px;
+		border-radius: 0;
+		bottom: auto;
+		margin: 0;
+		background-size: 100%;
+		overflow: hidden;
+		text-indent: -9999px;
+	}
+	#demo-bar-badge:before, #demo-bar-badge:after {
+		display: none !important;
+	}
+</style>	
+</body>
+
+</html>
