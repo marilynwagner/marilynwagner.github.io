@@ -155,13 +155,13 @@ a.inverted:hover {
 }
 
 /* General Elements */
-hr {
+/*hr {
   border-top: 1px solid #c0c0c0;
   border-right: 0;
   border-bottom: 1px solid #c0c0c0;
   border-left: 0;
   margin: 60px 0;
-}
+}*/
 
 img {
   max-width: 100%;
@@ -176,7 +176,7 @@ img {
 }
 
 .title hr {
-  width: 60px;
+  width: 140px;
   margin: 20px auto 35px;
   border: 1px solid #c0c0c0;
 }
@@ -316,7 +316,7 @@ a i:hover {
 }
 
 .process p {
-  font-size: 13px;
+  font-size: 16px;
   margin-bottom: 0;
 }
 
@@ -382,9 +382,9 @@ i.process-icon:hover {
 .avatars p.script {
   font-size: 14px;
   line-height: 18px;
-  color: grey;
+  color: #535353;
   margin: 0 20px;
-  min-height: 70px;
+  min-height: 35px;
 }
 
 .avatars p {
@@ -431,9 +431,8 @@ i.process-icon:hover {
   color: #CCC;
   font-family: 'Museo Sans W01 900',Helvetica,Arial,sans-serif;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   font-weight: normal;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .contact .footer-text {
@@ -554,7 +553,7 @@ a.contactLink {
   }
 
   h1 {
-    font-size: 3em;
+    font-size: 2em;
     letter-spacing: 0.025em;
     line-height: 1em;
   }
@@ -574,7 +573,7 @@ a.contactLink {
     margin-top: 0;
   }
 
-  h1 {
+  h1, h2 {
     font-size: 1.25em;
   }
 

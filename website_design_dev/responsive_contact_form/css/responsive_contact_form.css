@@ -5,7 +5,7 @@
 
 .contact {
   padding: 25px 0 450px 0;
-    background: rgba(0, 0, 0, 0.3) repeat top left;
+  background: rgba(0, 0, 0, 0.3) repeat top left;
 }
 
 .contact i {
@@ -45,9 +45,8 @@
   width: 100%;
   outline: none;
   border: none;
-  text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 11px;
+  font-size: 16px;
 }
 
 #contactform input {
@@ -63,11 +62,11 @@
 }
 
 #contactform .btn {
-  width: 100%;
+  width: 35%;
   height: 50px;
   border-radius: 0;
   border: 1px solid #333;
-  background: rgba(0,0,0,0.8);
+  background: #3071A9;
   color: #fff;
 }
 

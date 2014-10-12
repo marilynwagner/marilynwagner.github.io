@@ -52,7 +52,7 @@ function Init() {
 	// Hook up event handlers needed
 	document.getElementById("btnCalculateTotal").onclick = CalculateTotal;
 	document.getElementById("btnProcessOrder").onclick = ProcessOrder;
-	document.getElementById("btnReset").onclick = Reset;
+	document.getElementById("btnReset").onclick = MyReset;
  
 	// This function will check to see if the user selected the Credit card option.  If he/she did, 
 	// set the CSS visibility property to "visible", otherwise set it to "hidden".
@@ -191,7 +191,7 @@ function ProcessOrder() {
 
 } // function ProcessOrder
 
-function Reset () {
+function MyReset () {
 
 	// This function should run when the Reset button is clicked.
 	divOrder.innerHTML = "";
