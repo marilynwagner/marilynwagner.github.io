@@ -52,6 +52,7 @@ function Init() {
 	// Hook up event handlers needed
 	document.getElementById("btnCalculateTotal").onclick = CalculateTotal;
 	document.getElementById("btnProcessOrder").onclick = ProcessOrder;
+	document.getElementById("btnReset").onclick = Reset;
  
 	// This function will check to see if the user selected the Credit card option.  If he/she did, 
 	// set the CSS visibility property to "visible", otherwise set it to "hidden".
@@ -182,10 +183,16 @@ function ProcessOrder() {
 
 	// Concatenate the appropriate msg into divOrder.  
 	divOrder.innerHTML += "<h3>Welcome to Rose's Deli, " + txtName.value + "</h3>";  
-	divOrder.innerHTML += "<p>You have ordered a " + g_sSize + " " + g_sSandwich + " with <br>" + g_sExtras + "</p>"; 
+	divOrder.innerHTML += "<p>You have ordered a " + g_sSize + " " + g_sSandwich + " Sandwich with <br>" + g_sExtras + "</p>"; 
 	divOrder.innerHTML += "<p>Your Total is $" + g_nTotal + "</p>"; 
 	divOrder.innerHTML += "<p>Paid by " + selPayment.value + "</p>";
 	divOrder.innerHTML += "<p><strong>Have a nice day!</strong></p>"; 
 	
 
 } // function ProcessOrder
+
+function Reset () {
+
+	// This function should run when the Reset button is clicked.
+	divOrder.innerHTML = "";
+}

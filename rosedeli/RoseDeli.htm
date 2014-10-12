@@ -13,7 +13,7 @@
 				background-color: black;
 			}
 			#divWrapper {
-				background-color: #9999CC;
+				background-color: #b2b2b2;
 				width: 80%;
 				border: solid white;
 				border-radius: 20px;
@@ -82,7 +82,7 @@
 	<div id="divWrapper">
 		<form name="frmMain" action="">
 			<h1 id="h1Title">Rose's Deli</h1>
-			<h2>Part 1</h2>
+			<h2>Order Information</h2>
 
 			<h3>Sandwich</h3>
 			<label><input type="radio" name="radSandwich" value="Chicken Breast" />Chicken Breast</label><br/>
@@ -108,8 +108,8 @@
 
 			<div id="divErrors"></div>
 
-			<div id="divPaymentInfo">
-				<p><h2>Part 2</h2></p>
+			<div id="divPaymentInfo"><br>
+				<p><h2>Payment Information</h2></p>
 
 				<strong>Customer's Name:</strong> <input type="text" id="txtName" />
 				<br /><br />
@@ -134,12 +134,12 @@
 					</select>
 				</div><!-- divCreditCardInfo -->
 			</div><!-- divPaymentInfo -->
-
+			<p><h2>Process Order</h2></p>
 			<input type="button" id="btnProcessOrder" value="Process Order" />
 
 			<div id="divOrder"></div>
 
-			<input type="reset" value="Reset" />
+			<input type="reset" id="btnReset" value="Reset" />
 		</form>
 	</div> <!-- divWrapper -->
 </body>
