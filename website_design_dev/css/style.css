@@ -281,12 +281,12 @@ a i:hover {
   width: 100%;
   padding-top: 70px;
   padding-bottom: 80px;
-  background-color: #000000;
+  background-color: #1D1F21;
 }
 
 .process h2 {
-  color: #80cbc8 !important;
-  font-family: "Museo Sans W01 100",Helvetica,Arial,sans-serif;
+  color: #B02367 !important;
+  font-family: Arial,sans-serif;
   font-size: 27px;
   font-weight: 100;
   line-height: 36px;
@@ -318,6 +318,9 @@ a i:hover {
 .process p {
   font-size: 16px;
   margin-bottom: 0;
+  color: #CCC !important;
+  font-family: Arial,sans-serif;
+
 }
 
 i.process-icon {
@@ -476,7 +479,7 @@ i.process-icon:hover {
 }
 
 .contact a {
-  color: #72cbc9;
+  color: rgba(255, 27, 125, 0.8);
 }
 
 .contact a:hover {
