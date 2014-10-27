@@ -2,7 +2,7 @@
 GENERAL
 ***********************************/
 html {
-    background-color: #4C4C4C;
+    background-color: #4D626D;
 }
 body {
   font-family: 'Open Sans', sans-serif;
@@ -97,13 +97,13 @@ footer {
     position: fixed;
     left:0px;
     bottom:0px;
-    height:30px;
+    height: 2%;
     width:100%;
-    background:#999;
+    background: #809995;
     font-size: 1em;
     text-align: center;
     clear: both;
-    padding: 20px;
+    padding-bottom: 20px;
     color: black;
 
 }
@@ -138,9 +138,9 @@ PAGE: PORTFOLIO
   margin: 0;
   padding: 5%;
   font-size: 1em;
-  color: #999;
-  background-color: #541634;
-  height: 100px;
+  color: black;
+  background-color: #98928C;
+  height: 50px;
 }
 
 
@@ -210,7 +210,7 @@ header {
   /*background: #6ab47b;*/
   /*border-color: #599a68;*/
   /*background: #DC5E9B;*/
-  background: #B2B2B2;/*light grey*/
+  background: #9DA3A6;/*light grey*/
   border-color: black;
 }
 
@@ -218,11 +218,11 @@ header {
 nav {
   /*background: #599a68;*/
   /*background: #D33682;*/
-  background: #808080;/*medium grey*/
+  background: #809995;/*muted green*/
 }
 
 #wrapper {
-  background-color: #4C4C4C;/*dark grey*/
+  background-color: #4D626D;/*dark grey*/
 }
 
 /* logo text */
