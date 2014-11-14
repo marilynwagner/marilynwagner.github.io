@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='UTF-8'>	
+	<title>Dynamic Behavior</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href = "http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<script src=
+	"http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<style>
+		body {
+			width: 80%;
+			margin: 0 auto;
+			background: #333333;
+		}
+		::-webkit-input-placeholder {
+		   color: #D9411E;
+		   font-size: 1.5em;
+		}
+
+		:-moz-placeholder { /* Firefox 18- */
+		   color: #D9411E; 
+		   font-size: 1.5em; 
+		}
+
+		::-moz-placeholder {  /* Firefox 19+ */
+		   color: #D9411E;  
+		   font-size: 1.5em;
+		}
+
+		:-ms-input-placeholder {  
+		   color: #D9411E; 
+		   font-size: 1.5em; 
+		}
+
+		.form-textarea-wrapper {
+			width: 60em;
+		  	max-width: 100%; /* ie8 fallback */
+		}
+
+		.form-textarea {
+		  	width: 100%;
+		  	min-height: 20em;
+		  	border: 1px solid black;
+		  	overflow: hidden;
+		}
+
+		@media screen and (max-width: 65em){
+	  		.form-textarea-wrapper {
+	  			max-width:50em; 
+	  		}
+     	}
+	    @media screen and (max-width: 50em){
+	  		.form-textarea-wrapper {
+	  			max-width:35em; 
+	  		}
+	     }
+	   	@media screen and (max-width: 37em){
+	  		.form-textarea-wrapper {
+	  			max-width:20em; 
+	  		}
+	   	}
+
+	</style>
+</head>
+
+<body ng-app="myNoteApp" ng-controller="myNoteCtrl">
+
+	<h2 style="color: white;">Dynamic Behavior with AngularJS</h2>
+<br><br>
+
+	<div class="form-textarea-wrapper resizable textarea-processed resizable-textarea">
+		<textarea class="form-textarea required" style="background: #FFD452;" placeholder="Write some text here and see how the 'Number of characters left' changes" ng-model="message" cols="135" rows="20"></textarea>
+	</div>
+
+	</br><br>
+	<p>
+		<button class="btn btn-success" ng_click="save()">Save</button>&nbsp;&nbsp;&nbsp;&nbsp;
+		<button class="btn btn-primary"ng-click="clear()">Clear</button>
+	</p>
+	<p><h3 style="color: white;">Number of characters left: <span style="color: #D9411E;" ng-bind="left()"></span></h3></p>
+
+	<!--<p><h3 style="color: white;">Number of characters left: <span style="color: #D9411E;" {{100 - message.length}}></span></h3></p>-->
+
+	<!--<p>{{15 - message.length}} chars remaining</p>-->
+
+	<script src="myNoteApp.js"></script>
+	<script src="myNoteCtrl.js"></script>
+
+</body>
+</html>
+
