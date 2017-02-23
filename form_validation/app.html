@@ -1,0 +1,116 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ngMessages Demo</title>
+    <!-- load bootstrap and add some custom css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.4/cerulean/bootstrap.min.css">
+    <style>body { padding-top:50px; }</style>
+    <!-- load angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <!-- load ngmessages -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-messages.js"></script>
+    <!-- load our custom app -->
+    <script src="app.js"></script>
+</head>
+<body class="container" ng-app="app" ng-controller="MainCtrl as main" style="background-color: #B4DBC0;">   
+    <!-- create our form -->
+     <form name="userForm" novalidate>
+          <h1>Form Validation </h1>
+          <h3>use of ng-message, ng-if, ng-pattern</h3>
+          <br>
+          <!-- first name field -->
+          <div class="form-group" ng-class="{ 'has-error': userForm.firstName.$touched && userForm.firstName.$invalid }">
+               <label>First Name</label>
+               <input type="text" name="firstName" class="form-control" 
+                     placeholder="First Name"
+                     ng-model="main.firstName"
+                     ng-minlength="5" 
+                     ng-maxlength="10"
+                     required>  <!--why are numbers above in "" in Lerner's book no quotes  -->
+          </div>   
+          <!-- first name ngMessages goes here -->
+          <div class="help-block" ng-messages="userForm.firstName.$error" ng-if="userForm.firstName.$touched && userForm.firstName.$invalid"> <!-- I added && and thereafter -->
+               <p ng-message="minlength">Your name must have a minimum of 5 characters</p>
+               <p ng-message="maxlength">Your name must have a maximum of 10 characters</p>
+               <p ng-message="required">Your name is required</p>
+          </div>
+             
+          <!-- last name field --> 
+          <div class="form-group" ng-class="{ 'has-error': userForm.lastName.$touched && userForm.lastName.$invalid }">   
+               <label>Last Name</label>
+               <input type="text" name="lastName" class="form-control" 
+                    placeholder="Last Name"
+                    ng-model="main.lastName"
+                    ng-minlength="5" 
+                    ng-maxlength="10"
+                     required>  <!--why are numbers above in "" in Lerner's book no quotes  -->
+          </div>    
+          <!-- last name ngMessages goes here -->
+          <div class="help-block" ng-messages="userForm.lastName.$error" ng-if="userForm.lastName.$touched && userForm.lastName.$invalid"> <!-- I added && and thereafter -->
+               <p ng-message="minlength">Your name must have a minimum of 5 characters</p>
+               <p ng-message="maxlength">Your name must have a maximum of 10 characters</p>
+               <p ng-message="required">Your name is required</p>
+          </div>
+         
+          <!-- phone number field --> 
+          <div class="form-group" ng-class="{ 'has-error': userForm.phoneNumber.$touched && userForm.phoneNumber.$invalid }">
+               <label>Phone Number</label>
+               <input type="text" name="phoneNumber" ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/" class="form-control" 
+                    placeholder="Phone Number"
+                    ng-model="main.phoneNumber"             
+                    required>  
+          </div>    
+          <!-- phone number ngMessages goes here -->
+          <div class="help-block" ng-messages="userForm.phoneNumber.$error" ng-if="userForm.phoneNumber.$touched && userForm.phoneNumber.$invalid"> <!-- I added && and thereafter -->
+               <p ng-message="pattern" >This needs to be a valid 10 digit phone number</p>
+               <p ng-message="required">Your phone number is required</p>
+          </div>
+         
+          <!-- email field -->
+          <div class="form-group" ng-class="{ 'has-error': userForm.email.$touched && userForm.email.$invalid }"><br>
+              <label>Email Address</label>
+              <input type="email" name="email" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" class="form-control" 
+                    placeholder="Email Address"
+                    ng-model="main.email"
+                    ng-minlength="5"
+                    ng-maxlength="20"
+                    required>
+          </div>
+          <!-- email ngMessages goes here -->
+          <div class="help-block" ng-messages="userForm.email.$error" ng-if="userForm.email.$touched">
+               <p ng-message="required">This field is required</p>
+               <p ng-message="minlength">Your email address must have a minimum of 5 characters</p>
+               <p ng-message="maxlength">Your email address must have a maximum of 10 characters</p>
+               <p ng-message="required">Your email address is required</p> 
+               <p ng-message="pattern" >This needs to be a valid email</p>
+          </div>
+           <!-- submit button -->     
+          <div class="form-group">
+              <button type="submit" ng-disabled="userForm.$invalid" class="btn btn-primary">Submit</button> <!-- note I added ng-disabled code here - unless all fields are completed CANNOT submit (it's 'greyed out') -->
+          </div>
+        
+      </form>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+ 
+  
+
+
